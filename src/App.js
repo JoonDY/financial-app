@@ -10,10 +10,24 @@ function App() {
     setHamburger(!hamburger);
   };
 
+  const hideBurger = () => {
+    if (window.innerWidth > 1024 && hamburger) {
+      setHamburger(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', hideBurger);
+
+    return () => {
+      window.removeEventListener('resize', hideBurger);
+    };
+  });
+
   return (
     <>
       <Header toggleMenu={toggleMenu} />
-      {hamburger && <Hamburger />}
+      {hamburger && <Hamburger toggleMenu={toggleMenu} />}
       <Outlet />
     </>
   );

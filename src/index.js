@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Salary from './routes/Salary';
-import Housing from './routes/Housing';
-import Fire from './routes/Fire';
-import Rentvbuy from './routes/Rentvbuy';
-import Error from './routes/Error';
+import Salary from './pages/Salary';
+import Housing from './pages/Housing';
+import Fire from './pages/Fire';
+import Rentvbuy from './pages/Rentvbuy';
+import Error from './pages/Error';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 

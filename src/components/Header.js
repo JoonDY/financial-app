@@ -3,6 +3,7 @@ import Nav from './Nav.js';
 import NavItem from './NavItem.js';
 import Logo from './Logo.js';
 import IconHamburger from './IconHamburger.js';
+import navigation from '../util/navigation.js';
 
 const Header = ({ toggleMenu }) => {
   return (
@@ -10,10 +11,11 @@ const Header = ({ toggleMenu }) => {
       <Logo>moneyme</Logo>
       <IconHamburger toggleMenu={toggleMenu} />
       <Nav>
-        <NavItem to="salary">Salary</NavItem>
-        <NavItem to="housing">Housing</NavItem>
-        <NavItem to="fire">FIRE</NavItem>
-        <NavItem to="rentvbuy">Rent v Buy</NavItem>
+        {navigation.map((nav) => (
+          <NavItem to={nav.to} key={nav.to}>
+            {nav.text}
+          </NavItem>
+        ))}
       </Nav>
     </header>
   );
