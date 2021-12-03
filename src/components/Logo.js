@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { appName } from '../util/constants';
 
 const Logo = ({ children }) => {
   return (
-    <Link to="/" className="text-3xl font-bold select-none">
-      {children}
+    <Link to="/" className="text-3xl font-black select-none">
+      {appName.name}
     </Link>
   );
 };

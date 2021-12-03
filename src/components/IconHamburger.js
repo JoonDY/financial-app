@@ -2,7 +2,7 @@ import React from 'react';
 
 const IconHamburger = ({ toggleMenu }) => {
   return (
-    <div className="lg:hidden flex items-center mt-1 cursor-pointer">
+    <div className="md:hidden flex items-center mt-1 cursor-pointer">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"

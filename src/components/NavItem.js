@@ -1,12 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const NavItem = ({ to, children }) => {
   return (
-    <li className="border-b-2 border-white hover:border-pink-400">
-      <Link className="select-none" to={to}>
+    <li className="select-none">
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? 'border-b-2 border-pink-200'
+            : 'border-b-2 border-transparent hover:border-pink-200'
+        }
+        to={to}
+      >
         {children}
-      </Link>
+      </NavLink>
     </li>
   );
 };
