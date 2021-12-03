@@ -11,7 +11,7 @@ function App() {
   };
 
   const hideBurger = () => {
-    if (window.innerWidth > 1024 && hamburger) {
+    if (window.innerWidth > 768 && hamburger) {
       setHamburger(false);
     }
   };

@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        default: ['Roboto'],
+        default: ['Montserrat'],
       },
     },
   },
