@@ -10,6 +10,10 @@
 
 @layer components {
   .calc-header {
-    @apply text-left mt-2 mb-4 font-extrabold text-lg;
+    @apply text-left mt-2 mb-4 font-extrabold text-2xl;
+  }
+
+  .form-header {
+    @apply mt-2 mb-2 font-bold text-lg  sm:col-span-3;
   }
 }

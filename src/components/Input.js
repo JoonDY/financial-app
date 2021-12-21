@@ -1,15 +1,27 @@
-import React from 'react';
+import Label from './Label';
 
-const Input = ({ type, children, placeholder, disabled }) => {
+const Input = ({
+  label,
+  type,
+  placeholder,
+  disabled,
+  handleChange,
+  value,
+  name,
+}) => {
   return (
-    <input
-      type={type}
-      disabled={disabled}
-      placeholder={placeholder}
-      className="sm:col-span-2 text-xs font-semibold px-4 py-2 flex items-center my-2 sm:mx-16 focus:outline-none border-2 border-gray-200 shadow-sm focus:border-indigo-200"
-    >
-      {children}
-    </input>
+    <>
+      <Label>{label}</Label>
+      <input
+        type={type}
+        disabled={disabled}
+        value={value}
+        placeholder={placeholder}
+        onChange={handleChange}
+        name={name}
+        className="sm:col-span-2 text-xs font-semibold px-4 py-2 flex items-center my-2 sm:mx-16 focus:outline-none border-2 border-gray-200 shadow-sm focus:border-indigo-200"
+      />
+    </>
   );
 };
 
