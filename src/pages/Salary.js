@@ -1,40 +1,91 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Form from '../components/Form';
 import Label from '../components/Label';
 import Input from '../components/Input';
-import { netPay } from '../util/formulas';
+import { netPay, roundTwo } from '../util/formulaSalary';
 
 const Salary = () => {
   const [inputs, setInputs] = useState({
-    payHour: null,
-    grossAnnual: null,
-    deductions: null,
-    netAnnual: null,
+    payHour: '',
+    grossAnnual: '',
   });
+
+  const [net, setNet] = useState({
+    netYear: null,
+    netDay: null,
+    netWeek: null,
+    netMonth: null,
+  });
+
+  useEffect(() => {
+    if (inputs.grossAnnual | inputs.payHour) {
+      const annual = netPay(inputs.grossAnnual, inputs.deductions);
+      setNet({
+        netYear: annual,
+        netDay: annual / 52 / 5,
+        netWeek: annual / 52,
+        netMonth: annual / 12,
+      });
+    }
+  }, [inputs]);
 
   return (
     <main>
-      <Form title="Money Home">
-        <Label>Pay Per Hour</Label>
-        <Input placeholder="$0.00"></Input>
+      <Form title="Take It Home">
+        <Input
+          label="Pay Per Hour"
+          type="number"
+          placeholder="$0.00"
+          value={roundTwo(inputs.payHour)}
+          handleChange={(e) => {
+            setInputs({
+              payHour: e.target.value,
+              grossAnnual: e.target.value * 40 * 52,
+            });
+          }}
+          name="payHour"
+        />
 
-        <Label>Gross Annual</Label>
-        <Input placeholder="$0.00"></Input>
+        <Input
+          label="Gross Annual"
+          placeholder="$0.00"
+          value={roundTwo(inputs.grossAnnual)}
+          handleChange={(e) => {
+            setInputs({
+              payHour: e.target.value / 40 / 52,
+              grossAnnual: e.target.value,
+            });
+          }}
+          name="grossAnnual"
+        />
 
-        <Label>Pretax Deductions</Label>
-        <Input placeholder="$0.00"></Input>
+        <Input
+          label="Net Annual Pay"
+          disabled={true}
+          value={`$ ${Math.floor(net.netYear / 10) * 10}`}
+          placeholder="$0.00"
+        />
 
-        <Label>Net Annual Pay</Label>
-        <Input disabled={true} placeholder="$0.00"></Input>
+        <Input
+          label="Net Monthly Pay"
+          disabled={true}
+          value={`$ ${Math.floor(net.netMonth)}`}
+          placeholder="$0.00"
+        />
 
-        <Label>Net Daily Pay</Label>
-        <Input disabled={true} placeholder="$0.00"></Input>
+        <Input
+          label="Net Weekly Pay"
+          disabled={true}
+          value={`$ ${Math.floor(net.netWeek)}`}
+          placeholder="$0.00"
+        />
 
-        <Label>Net Weekly Pay</Label>
-        <Input disabled={true} placeholder="$0.00"></Input>
-
-        <Label>Net Monthly Pay</Label>
-        <Input disabled={true} placeholder="$0.00"></Input>
+        <Input
+          label="Net Daily Pay"
+          disabled={true}
+          value={`$ ${Math.floor(net.netDay)}`}
+          placeholder="$0.00"
+        />
       </Form>
     </main>
   );
