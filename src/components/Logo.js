@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { appName } from '../util/constants';
+import { appName } from '../constants';
 
 const Logo = ({ children }) => {
   return (

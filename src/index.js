@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import Salary from './pages/Salary';
-import Housing from './pages/Housing';
-import Fire from './pages/Fire';
-import Rentvbuy from './pages/Rentvbuy';
-import Error from './pages/Error';
+import { Salary, Housing, RentvBuy, Fire, Error } from './pages';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 
@@ -17,7 +13,6 @@ ReactDOM.render(
           <Route path="salary" element={<Salary />} />
           <Route path="housing" element={<Housing />} />
           <Route path="fire" element={<Fire />} />
-          <Route path="rentvbuy" element={<Rentvbuy />} />
           <Route path="*" element={<Error />} />
         </Route>
       </Routes>

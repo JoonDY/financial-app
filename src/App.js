@@ -1,33 +1,15 @@
-import { useState, useEffect } from 'react';
 import Header from './components/Header';
 import { Outlet } from 'react-router';
 import Hamburger from './components/Hamburger';
+import Menu from './hooks/Menu';
 
 function App() {
-  const [hamburger, setHamburger] = useState(false);
-
-  const toggleMenu = () => {
-    setHamburger(!hamburger);
-  };
-
-  const hideBurger = () => {
-    if (window.innerWidth > 768 && hamburger) {
-      setHamburger(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('resize', hideBurger);
-
-    return () => {
-      window.removeEventListener('resize', hideBurger);
-    };
-  });
+  const { menu, toggleMenu } = Menu();
 
   return (
     <>
       <Header toggleMenu={toggleMenu} />
-      {hamburger && <Hamburger toggleMenu={toggleMenu} />}
+      {menu && <Hamburger toggleMenu={toggleMenu} />}
       <Outlet />
     </>
   );

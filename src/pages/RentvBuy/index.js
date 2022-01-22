@@ -1,10 +1,11 @@
 import React from 'react';
+import Form from '../../components/Form';
 
 const Rentvbuy = () => {
   return (
-    <section>
-      <h2>Rent v Buy</h2>
-    </section>
+    <main>
+      <Form></Form>
+    </main>
   );
 };
 

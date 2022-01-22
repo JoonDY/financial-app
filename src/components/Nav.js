@@ -1,8 +1,8 @@
 import React from 'react';
 import NavItem from './NavItem';
-import { navigation } from '../util/constants';
+import { navigation } from '../constants';
 
-const Nav = ({ children }) => {
+const Nav = () => {
   return (
     <nav className="hidden md:flex justify-center ">
       <ul className="flex gap-4 items-end text-xs font-bold mt-1">

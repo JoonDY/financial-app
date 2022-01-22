@@ -59,10 +59,3 @@ export const netPay = (income, deductions = 0) => {
   let net = income - fedTax - stateTax - ficaTax;
   return net;
 };
-
-export const roundTwo = (num) => {
-  if (num == 0 || num === null) {
-    return '';
-  }
-  return Math.round(num * 100) / 100;
-};

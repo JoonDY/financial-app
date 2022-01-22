@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { navigation } from '../util/constants';
+import { navigation } from '../constants';
 
 const Hamburger = ({ toggleMenu }) => {
   return (
