@@ -47,6 +47,7 @@ const FireLogic = () => {
       years: years,
     });
     return;
+    // eslint-disable-next-line
   }, [inputs]);
 
   const fireInputs = [

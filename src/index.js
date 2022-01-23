@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { Salary, Housing, RentvBuy, Fire, Error } from './pages';
+import { Salary, Housing, Fire, Error } from './pages';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 
