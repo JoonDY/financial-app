@@ -4,12 +4,12 @@ import Hamburger from './components/Hamburger';
 import Menu from './hooks/Menu';
 
 function App() {
-  const { menu, toggleMenu } = Menu();
+  const { hamburger, toggleMenu } = Menu();
 
   return (
     <>
       <Header toggleMenu={toggleMenu} />
-      {menu && <Hamburger toggleMenu={toggleMenu} />}
+      {hamburger && <Hamburger toggleMenu={toggleMenu} />}
       <Outlet />
     </>
   );

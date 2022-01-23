@@ -4,8 +4,8 @@ import { roundTwo } from '../../helpers/helpers';
 
 const SalaryInputs = () => {
   const [inputs, setInputs] = useState({
-    payHour: null,
-    grossAnnual: null,
+    payHour: '',
+    grossAnnual: '',
   });
 
   const [net, setNet] = useState({

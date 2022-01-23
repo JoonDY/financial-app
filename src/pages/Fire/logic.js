@@ -6,22 +6,20 @@ import useLocalStorage from '../../hooks/useLocalStorage';
 
 const FireLogic = () => {
   const [inputs, setInputs] = useLocalStorage('fireInputs', {
-    age: null,
-    save: null,
-    currentExpense: null,
-    retiredExpense: null,
-    worth: null,
-    rate: null,
-    wr: null,
+    age: '',
+    save: '',
+    currentExpense: '',
+    retiredExpense: '',
+    worth: '',
+    rate: '',
+    wr: '',
   });
 
   const [outputs, setOutputs] = useState({
-    goal: null,
-    years: null,
-    retireAge: null,
-    income: null,
-    hourly: null,
-    salary: null,
+    goal: '',
+    years: '',
+    retireAge: '',
+    income: '',
   });
 
   const handleChange = (e) => {
@@ -47,10 +45,6 @@ const FireLogic = () => {
       income: sum(inputs.currentExpense, inputs.save),
       retireAge: sum(inputs.age, years),
       years: years,
-      hourly: Math.round(
-        (sum(inputs.currentExpense, inputs.save) * 12) / 52 / 40
-      ),
-      salary: Math.round(sum(inputs.currentExpense, inputs.save) * 12),
     });
     return;
   }, [inputs]);
@@ -124,16 +118,6 @@ const FireLogic = () => {
     {
       label: 'Income',
       value: outputs.income,
-      disabled: true,
-    },
-    {
-      label: 'Target Pay (Hourly)',
-      value: outputs.hourly,
-      disabled: true,
-    },
-    {
-      label: 'Target Pay (Salary)',
-      value: outputs.salary,
       disabled: true,
     },
   ];
