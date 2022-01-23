@@ -4,10 +4,7 @@ import { appName } from '../constants';
 
 const Logo = ({ children }) => {
   return (
-    <Link
-      to="/salary"
-      className="text-3xl font-black select-none text-green-900"
-    >
+    <Link to="/" className="text-3xl font-black select-none text-green-900">
       {appName.name}
     </Link>
   );

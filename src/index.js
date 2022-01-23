@@ -10,7 +10,8 @@ ReactDOM.render(
     <Router>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route path="salary" element={<Salary />} />
+          <Route path="/" element={<Salary />} />
+          <Route path="/salary" element={<Salary />} />
           <Route path="housing" element={<Housing />} />
           <Route path="fire" element={<Fire />} />
           <Route path="*" element={<Error />} />
