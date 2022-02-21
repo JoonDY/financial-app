@@ -1,3 +1,3 @@
 # Financial App
 
-## Live Site: [Preview](https://app.netlify.com/sites/mystifying-wiles-1197a7)
+## Live Site: [Preview](https://mystifying-wiles-1197a7.netlify.app/)
